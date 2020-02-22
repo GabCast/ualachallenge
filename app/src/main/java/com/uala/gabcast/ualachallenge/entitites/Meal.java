@@ -2,6 +2,8 @@ package com.uala.gabcast.ualachallenge.entitites;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class Meal {
 
     private int idMeal;
@@ -462,5 +464,30 @@ public class Meal {
 
     public void setDateModified(String dateModified) {
         this.dateModified = dateModified;
+    }
+
+    public ArrayList<String> getIngredientes() {
+        ArrayList<String> ingredientes = new ArrayList<>();
+        ingredientes.add(getStrIngredient1());
+        ingredientes.add(getStrIngredient2());
+        ingredientes.add(getStrIngredient3());
+        ingredientes.add(getStrIngredient4());
+        ingredientes.add(getStrIngredient5());
+        ingredientes.add(getStrIngredient6());
+        ingredientes.add(getStrIngredient7());
+        ingredientes.add(getStrIngredient8());
+        ingredientes.add(getStrIngredient9());
+        ingredientes.add(getStrIngredient10());
+        ingredientes.add(getStrIngredient11());
+        ingredientes.add(getStrIngredient12());
+        ingredientes.add(getStrIngredient13());
+        ingredientes.add(getStrIngredient14());
+        ingredientes.add(getStrIngredient15());
+        ingredientes.add(getStrIngredient16());
+        ingredientes.add(getStrIngredient17());
+        ingredientes.add(getStrIngredient18());
+        ingredientes.add(getStrIngredient19());
+        ingredientes.add(getStrIngredient20());
+        return ingredientes;
     }
 }
