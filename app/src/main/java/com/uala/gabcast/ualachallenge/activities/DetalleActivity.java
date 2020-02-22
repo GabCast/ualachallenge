@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -62,8 +63,14 @@ public class DetalleActivity extends YouTubeBaseActivity implements YouTubePlaye
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
         if (!b) {
-            String[] url = meal.getStrYoutube().split("=");
-            youTubePlayer.cueVideo(url[1]);
+            if (meal.getStrYoutube() != null){
+                if (!meal.getStrYoutube().equals("")){
+                    String[] url = meal.getStrYoutube().split("=");
+                    youTubePlayer.cueVideo(url[1]);
+                } else
+                    Toast.makeText(this, "Hubo un error al cargar el video", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(this, "Hubo un error al cargar el video", Toast.LENGTH_SHORT).show();
         }
     }
 
