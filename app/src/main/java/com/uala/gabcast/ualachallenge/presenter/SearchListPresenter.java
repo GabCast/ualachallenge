@@ -3,7 +3,7 @@ package com.uala.gabcast.ualachallenge.presenter;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.uala.gabcast.ualachallenge.SearchListener;
+import com.uala.gabcast.ualachallenge.listeners.SearchListener;
 import com.uala.gabcast.ualachallenge.entitites.Meals;
 import com.uala.gabcast.ualachallenge.errorManager.ErrorHandler;
 import com.uala.gabcast.ualachallenge.model.ChallengeModel;

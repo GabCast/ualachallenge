@@ -13,6 +13,7 @@ import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.uala.gabcast.ualachallenge.R;
 import com.uala.gabcast.ualachallenge.entitites.Meal;
+import com.uala.gabcast.ualachallenge.listeners.SearchListener;
 import com.uala.gabcast.ualachallenge.picasso.PicassoTrustAll;
 
 import java.util.ArrayList;
@@ -20,11 +21,13 @@ import java.util.ArrayList;
 public class MealsRecyclerAdapter extends RecyclerView.Adapter<MealsRecyclerHolder>  {
 
     private ArrayList<Meal> mealArrayList;
+    private SearchListener searchListener;
     private Context context;
 
     public MealsRecyclerAdapter(Context context, ArrayList<Meal> mealArrayList) {
         this.mealArrayList = mealArrayList;
         this.context = context;
+        this.searchListener = (SearchListener) context;
     }
 
     @NonNull
@@ -38,6 +41,8 @@ public class MealsRecyclerAdapter extends RecyclerView.Adapter<MealsRecyclerHold
     public void onBindViewHolder(@NonNull final MealsRecyclerHolder holder, final int position) {
         holder.txtNombre.setText(mealArrayList.get(position).getStrMeal());
         holder.txtCategoria.setText(mealArrayList.get(position).getStrCategory());
+
+        holder.itemView.setOnClickListener(v -> searchListener.navigateDetalle(mealArrayList.get(position)));
 
         PicassoTrustAll.getInstance(context)
                 .load(mealArrayList.get(position).getStrMealThumb())

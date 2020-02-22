@@ -1,9 +1,10 @@
-package com.uala.gabcast.ualachallenge;
+package com.uala.gabcast.ualachallenge.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,8 +12,11 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.uala.gabcast.ualachallenge.R;
 import com.uala.gabcast.ualachallenge.adapters.MealsRecyclerAdapter;
 import com.uala.gabcast.ualachallenge.entitites.Meal;
+import com.uala.gabcast.ualachallenge.listeners.SearchListener;
 import com.uala.gabcast.ualachallenge.presenter.SearchListPresenter;
 
 import java.util.ArrayList;
@@ -26,7 +30,7 @@ public class SearchListActivity extends AppCompatActivity implements SearchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_search);
 
         setResources();
         searchListPresenter.searchListBy("");
@@ -73,5 +77,12 @@ public class SearchListActivity extends AppCompatActivity implements SearchListe
         rcvMeals.setLayoutManager(lLayout);
         MealsRecyclerAdapter rcAdapter = new MealsRecyclerAdapter(this, meals);
         rcvMeals.setAdapter(rcAdapter);
+    }
+
+    @Override
+    public void navigateDetalle(Meal meal) {
+        Intent intent = new Intent(this, DetalleActivity.class);
+        intent.putExtra("meal", new Gson().toJson(meal));
+        startActivity(intent);
     }
 }

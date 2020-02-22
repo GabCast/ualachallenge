@@ -1,4 +1,4 @@
-package com.uala.gabcast.ualachallenge;
+package com.uala.gabcast.ualachallenge.listeners;
 
 import com.uala.gabcast.ualachallenge.entitites.Meal;
 
@@ -9,4 +9,5 @@ public interface SearchListener {
     void showProgress();
     void hideProgress();
     void setRecyclerView(ArrayList<Meal> meals);
+    void navigateDetalle(Meal meal);
 }
