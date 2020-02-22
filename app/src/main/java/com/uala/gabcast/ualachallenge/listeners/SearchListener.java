@@ -10,4 +10,5 @@ public interface SearchListener {
     void hideProgress();
     void setRecyclerView(ArrayList<Meal> meals);
     void navigateDetalle(Meal meal);
+    void showRandom(Meal meal);
 }

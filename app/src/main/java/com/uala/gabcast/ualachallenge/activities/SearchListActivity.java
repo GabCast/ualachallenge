@@ -6,17 +6,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.uala.gabcast.ualachallenge.R;
 import com.uala.gabcast.ualachallenge.adapters.MealsRecyclerAdapter;
 import com.uala.gabcast.ualachallenge.entitites.Meal;
 import com.uala.gabcast.ualachallenge.listeners.SearchListener;
+import com.uala.gabcast.ualachallenge.picasso.PicassoTrustAll;
 import com.uala.gabcast.ualachallenge.presenter.SearchListPresenter;
 
 import java.util.ArrayList;
@@ -34,6 +40,9 @@ public class SearchListActivity extends AppCompatActivity implements SearchListe
 
         setResources();
         searchListPresenter.searchListBy("");
+        searchListPresenter.searchRandom();
+
+
     }
 
     private void setResources(){
@@ -84,5 +93,24 @@ public class SearchListActivity extends AppCompatActivity implements SearchListe
         Intent intent = new Intent(this, DetalleActivity.class);
         intent.putExtra("meal", new Gson().toJson(meal));
         startActivity(intent);
+    }
+
+    @Override
+    public void showRandom(Meal meal) {
+        ImageView imgPlatoRandom = (ImageView) findViewById(R.id.imgPlatoRandom);
+
+        PicassoTrustAll.getInstance(this)
+                .load(meal.getStrMealThumb())
+                .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .into(imgPlatoRandom, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                    }
+
+                    @Override
+                    public void onError() {
+                    }
+                });
     }
 }

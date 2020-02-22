@@ -46,7 +46,6 @@ public class MealsRecyclerAdapter extends RecyclerView.Adapter<MealsRecyclerHold
 
         PicassoTrustAll.getInstance(context)
                 .load(mealArrayList.get(position).getStrMealThumb())
-                .rotate(90f)
                 .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .into(holder.imgPlato, new Callback() {

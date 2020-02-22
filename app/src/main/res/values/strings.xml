@@ -4,4 +4,5 @@
     <string name="BASE_URL_SERVER_DESA">https://www.themealdb.com/</string>
     <string name="txtBuscar">Buscar</string>
     <string name="txtIngredientes">Ingredientes</string>
+    <string name="plato_random">Plato random</string>
 </resources>

@@ -36,8 +36,11 @@ public class StringGenericoRecyclerAdapter extends RecyclerView.Adapter<StringGe
     @Override
     public void onBindViewHolder(@NonNull final StringGenericoRecyclerHolder holder, final int position) {
         if (strings.get(position) != null) {
-            if (!strings.get(position).equals(""))
-                holder.txtString.setText(strings.get(position));
+            if (!strings.get(position).equals("")){
+                if (!strings.get(position).contains("null"))
+                    holder.txtString.setText(strings.get(position));
+            }
+
         }
 
     }

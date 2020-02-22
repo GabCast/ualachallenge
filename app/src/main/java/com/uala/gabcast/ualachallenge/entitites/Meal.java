@@ -131,7 +131,7 @@ public class Meal {
     }
 
     public String getStrIngredient1() {
-        return strIngredient1;
+        return strIngredient1 + " " + getStrMeasure1();
     }
 
     public void setStrIngredient1(String strIngredient1) {
@@ -139,7 +139,7 @@ public class Meal {
     }
 
     public String getStrIngredient2() {
-        return strIngredient2;
+        return strIngredient2 + " " + getStrMeasure2();
     }
 
     public void setStrIngredient2(String strIngredient2) {
@@ -147,7 +147,7 @@ public class Meal {
     }
 
     public String getStrIngredient3() {
-        return strIngredient3;
+        return strIngredient3 + " " + getStrMeasure3();
     }
 
     public void setStrIngredient3(String strIngredient3) {
@@ -155,7 +155,7 @@ public class Meal {
     }
 
     public String getStrIngredient4() {
-        return strIngredient4;
+        return strIngredient4 + " " + getStrMeasure4();
     }
 
     public void setStrIngredient4(String strIngredient4) {
@@ -163,7 +163,7 @@ public class Meal {
     }
 
     public String getStrIngredient5() {
-        return strIngredient5;
+        return strIngredient5 + " " + getStrMeasure5();
     }
 
     public void setStrIngredient5(String strIngredient5) {
@@ -171,7 +171,7 @@ public class Meal {
     }
 
     public String getStrIngredient6() {
-        return strIngredient6;
+        return strIngredient6 + " " + getStrMeasure6();
     }
 
     public void setStrIngredient6(String strIngredient6) {
@@ -179,7 +179,7 @@ public class Meal {
     }
 
     public String getStrIngredient7() {
-        return strIngredient7;
+        return strIngredient7 + " " + getStrMeasure7();
     }
 
     public void setStrIngredient7(String strIngredient7) {
@@ -187,7 +187,7 @@ public class Meal {
     }
 
     public String getStrIngredient8() {
-        return strIngredient8;
+        return strIngredient8 + " " + getStrMeasure8();
     }
 
     public void setStrIngredient8(String strIngredient8) {
@@ -195,7 +195,7 @@ public class Meal {
     }
 
     public String getStrIngredient9() {
-        return strIngredient9;
+        return strIngredient9 + " " + getStrMeasure9();
     }
 
     public void setStrIngredient9(String strIngredient9) {
@@ -203,7 +203,7 @@ public class Meal {
     }
 
     public String getStrIngredient10() {
-        return strIngredient10;
+        return strIngredient10 + " " + getStrMeasure10();
     }
 
     public void setStrIngredient10(String strIngredient10) {
@@ -211,7 +211,7 @@ public class Meal {
     }
 
     public String getStrIngredient11() {
-        return strIngredient11;
+        return strIngredient11 + " " + getStrMeasure11();
     }
 
     public void setStrIngredient11(String strIngredient11) {
@@ -219,7 +219,7 @@ public class Meal {
     }
 
     public String getStrIngredient12() {
-        return strIngredient12;
+        return strIngredient12 + " " + getStrMeasure12();
     }
 
     public void setStrIngredient12(String strIngredient12) {
@@ -227,7 +227,7 @@ public class Meal {
     }
 
     public String getStrIngredient13() {
-        return strIngredient13;
+        return strIngredient13 + " " + getStrMeasure13();
     }
 
     public void setStrIngredient13(String strIngredient13) {
@@ -235,7 +235,7 @@ public class Meal {
     }
 
     public String getStrIngredient14() {
-        return strIngredient14;
+        return strIngredient14 + " " + getStrMeasure14();
     }
 
     public void setStrIngredient14(String strIngredient14) {
@@ -243,7 +243,7 @@ public class Meal {
     }
 
     public String getStrIngredient15() {
-        return strIngredient15;
+        return strIngredient15 + " " + getStrMeasure15();
     }
 
     public void setStrIngredient15(String strIngredient15) {
@@ -251,7 +251,7 @@ public class Meal {
     }
 
     public String getStrIngredient16() {
-        return strIngredient16;
+        return strIngredient16 + " " + getStrMeasure16();
     }
 
     public void setStrIngredient16(String strIngredient16) {
@@ -259,7 +259,7 @@ public class Meal {
     }
 
     public String getStrIngredient17() {
-        return strIngredient17;
+        return strIngredient17 + " " + getStrMeasure17();
     }
 
     public void setStrIngredient17(String strIngredient17) {
@@ -267,7 +267,7 @@ public class Meal {
     }
 
     public String getStrIngredient18() {
-        return strIngredient18;
+        return strIngredient18 + " " + getStrMeasure18();
     }
 
     public void setStrIngredient18(String strIngredient18) {
@@ -275,7 +275,7 @@ public class Meal {
     }
 
     public String getStrIngredient19() {
-        return strIngredient19;
+        return strIngredient19 + " " + getStrMeasure19();
     }
 
     public void setStrIngredient19(String strIngredient19) {
@@ -283,7 +283,7 @@ public class Meal {
     }
 
     public String getStrIngredient20() {
-        return strIngredient20;
+        return strIngredient20 + " " + getStrMeasure20();
     }
 
     public void setStrIngredient20(String strIngredient20) {

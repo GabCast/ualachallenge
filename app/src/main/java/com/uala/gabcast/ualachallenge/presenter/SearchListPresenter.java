@@ -1,6 +1,7 @@
 package com.uala.gabcast.ualachallenge.presenter;
 
 import android.content.Context;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.uala.gabcast.ualachallenge.listeners.SearchListener;
@@ -42,7 +43,7 @@ public class SearchListPresenter {
 
             @Override
             public void onNext(Meals r) {
-                System.out.println("onNext get getGenericos");
+                System.out.println("onNext search");
                 if (r.getMeals() != null) {
                     if (r.getMeals().size() > 0){
                         searchListener.hideProgress();
@@ -56,6 +57,38 @@ public class SearchListPresenter {
         challengeModel.searchListBy(subscriber, s);
     }
 
+    public void searchRandom() {
+        final ErrorHandler errorHandler = new ErrorHandler();
+        Subscriber<Meals> subscriber = new Subscriber<Meals>() {
+            @Override
+            public void onCompleted() {
+                System.out.println("onCompleted random");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                String TAG = "onError random";
+                System.out.println(TAG + e.getMessage());
+                searchListener.hideProgress();
+                errorHandler.errorHandlerCode(context, e, TAG);
+            }
+
+            @Override
+            public void onNext(Meals r) {
+                System.out.println("onNext get random");
+                if (r.getMeals() != null) {
+                    if (r.getMeals().size() > 0){
+                        searchListener.showRandom(r.getMeals().get(0));
+                    } else
+                        Toast.makeText(context, "no hay meals", Toast.LENGTH_SHORT).show();
+                }else
+                    Toast.makeText(context, "no hay meals", Toast.LENGTH_SHORT).show();
+
+                new Handler().postDelayed(() -> searchRandom(), 30000);
+            }
+        };
+        challengeModel.searchRandom(subscriber);
+    }
 
 
 }

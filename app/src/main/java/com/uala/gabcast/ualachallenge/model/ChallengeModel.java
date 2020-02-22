@@ -27,4 +27,14 @@ public class ChallengeModel {
 
     }
 
+    public void searchRandom(final Subscriber<Meals> subscriber) {
+
+        Observable<Meals> result = ClientAPI.getClient(context).searchRandom();
+
+        result.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+
+    }
+
 }

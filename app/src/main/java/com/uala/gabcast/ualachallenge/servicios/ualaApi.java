@@ -12,4 +12,7 @@ public interface ualaApi {
     @GET("api/json/v1/1/search.php")
     Observable<Meals> searchList(@Query("s") String s);
 
+    @GET("api/json/v1/1/random.php")
+    Observable<Meals> searchRandom();
+
 }
